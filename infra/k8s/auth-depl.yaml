@@ -14,14 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: us.gcr.io/ticketing-dev-486505/auth
-          resources:
-            limits:
-              cpu: "200m"      # Max 20% of one CPU core
-              memory: "256Mi"  # Max 256MB RAM
-            requests:
-              cpu: "100m"      # Minimum guaranteed CPU
-              memory: "128Mi"  # Minimum guaranteed RAM
+          image: nimakar68/auth
 ---
 apiVersion: v1
 kind: Service
@@ -34,4 +27,4 @@ spec:
     - name: auth
       protocol: TCP
       port: 3000
-      targetPort: 3000 
+      targetPort: 3000
